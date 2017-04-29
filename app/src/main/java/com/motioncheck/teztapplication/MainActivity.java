@@ -83,5 +83,15 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        movementManager.register();
+    }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        movementManager.unregister();
+    }
 }
