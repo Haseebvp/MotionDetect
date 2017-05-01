@@ -96,12 +96,9 @@ public class MovementManager implements SensorEventListener {
             else {
                 statusText = "Running";
             }
-        } else if (diff > 3 && diff < 10) {
+        } else if (diff > 2 && diff < 10) {
             statusText = "Walking";
         }
-//        else if (diff < 3 && diff > 2){
-//            statusText = "Moving";
-//        }
         else if (diff < 2 && diff > 0.1) {
             statusText = "Idle";
         } else if (diff <= 0.1) {

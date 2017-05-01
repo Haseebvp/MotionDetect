@@ -42,40 +42,42 @@ public class MainActivity extends AppCompatActivity {
         movementManager.setOnDataChanged(new EventCommunication() {
             @Override
             public void getValues(String data, String statustext) {
-                status.setText(data);
-                switch (data) {
-                    case "Jumping":
-                        statusPic.setImageResource(R.drawable.jump);
-                        break;
+                if (data != null) {
+                    status.setText(data);
 
-                    case "Running":
-                        statusPic.setImageResource(R.drawable.run);
-                        break;
+                    switch (data) {
+                        case "Jumping":
+                            statusPic.setImageResource(R.drawable.jump);
+                            break;
 
-                    case "Walking":
+                        case "Running":
+                            statusPic.setImageResource(R.drawable.run);
+                            break;
 
-                        statusPic.setImageResource(R.drawable.walk);
-                        break;
+                        case "Walking":
+
+                            statusPic.setImageResource(R.drawable.walk);
+                            break;
 
 //                    case "Moving":
 //                        statusPic.setImageResource(R.drawable.move);
 //                        break;
 
-                    case "Idle":
+                        case "Idle":
 
-                        statusPic.setImageResource(R.drawable.idle);
-                        break;
+                            statusPic.setImageResource(R.drawable.idle);
+                            break;
 
-                    case "Phone Detached":
+                        case "Phone Detached":
 
-                        statusPic.setImageResource(R.drawable.detach);
-                        break;
+                            statusPic.setImageResource(R.drawable.detach);
+                            break;
 
-                    default :
-                        statusPic.setImageResource(R.drawable.idle);
-                        break;
+                        default:
+                            statusPic.setImageResource(R.drawable.idle);
+                            break;
 
-
+                    }
 
                 }
             }
